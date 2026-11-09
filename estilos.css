@@ -148,7 +148,7 @@ figcaption {
     position: relative;
     justify-items: center;
     flex: none;
-    height: 10rem;
+    height: 16rem;
     overflow: hidden;
 }
 
@@ -157,7 +157,7 @@ figcaption {
     inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .imagen-pendiente { width: 2rem; height: 2rem; color: var(--tinta); }
@@ -208,5 +208,5 @@ button:disabled { background: #e9e6ee; color: #4e495d; cursor: wait; }
 @media (max-width: 42rem) {
     .contenedor { width: min(32rem, 100% - 1.5rem); padding: 1.5rem 0; }
     .tarjetas { grid-template-columns: minmax(0, 1fr); }
-    .contenido-imagen { height: 12rem; }
+    .contenido-imagen { height: 14rem; }
 }
