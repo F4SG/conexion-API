@@ -1,0 +1,212 @@
+:root {
+    color-scheme: light;
+    font-family: system-ui, sans-serif;
+    color: #202637;
+    background: #f6f5ef;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: radial-gradient(ellipse at top right, #f1e5ff 0, transparent 37rem);
+}
+
+.contenedor {
+    width: min(64rem, 100% - 2.5rem);
+    margin: 0 auto;
+    padding: 2.1rem 0;
+}
+
+.encabezado { margin-bottom: 1.5rem; }
+
+.etiqueta {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    margin: 0 0 .6rem;
+    color: #5e3d89;
+    font-size: .75rem;
+    font-weight: 750;
+    letter-spacing: .11em;
+    text-transform: uppercase;
+}
+
+h1, h2, p, figure, blockquote { margin: 0; }
+
+h1 {
+    font-size: clamp(2rem, 5.2vw, 3.55rem);
+    line-height: 1.05;
+    letter-spacing: -.06em;
+    text-wrap: balance;
+}
+
+h1 span { color: #6640a0; }
+
+.introduccion {
+    margin-top: .6rem;
+    color: #54566a;
+    line-height: 1.5;
+}
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    min-width: 0;
+    padding: .95rem;
+    background: #fff;
+    border: 1px solid #e5e2ec;
+    border-radius: 1rem;
+    box-shadow: 0 6px 18px #2a21460a;
+}
+
+.citas { --tinta: #5d3892; --fondo: #f1e9fc; }
+.perros { --tinta: #8c451e; --fondo: #fbeee1; }
+.gatos { --tinta: #315e52; --fondo: #e5f3ec; }
+.datos { --tinta: #87520e; --fondo: #fbf1d6; }
+
+.cabecera-tarjeta {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+
+.cabecera-tarjeta h2 { font-size: 1.15rem; line-height: 1.2; }
+.cabecera-tarjeta p { margin-top: .12rem; color: #57596c; font-size: .8rem; }
+
+.numero {
+    margin-left: auto;
+    color: var(--tinta);
+    font: 700 .76rem ui-monospace, monospace;
+    letter-spacing: .08em;
+}
+
+.insignia {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: .72rem;
+    background: var(--fondo);
+    color: var(--tinta);
+}
+
+.iconos { display: none; }
+
+.icono {
+    width: 1.15rem;
+    height: 1.15rem;
+    flex: none;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.65;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.contenido {
+    display: grid;
+    align-items: center;
+    min-height: 10rem;
+    flex: 1;
+    border-radius: .7rem;
+    background: var(--fondo);
+}
+
+.contenido-texto {
+    padding: 1rem 1.2rem;
+    font-size: clamp(1rem, 1.8vw, 1.25rem);
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+blockquote {
+    font-family: Georgia, serif;
+    font-size: 1.12em;
+    line-height: 1.35;
+}
+
+blockquote:not(:empty)::before { content: "“"; }
+blockquote:not(:empty)::after { content: "”"; }
+
+figcaption {
+    margin-top: .55rem;
+    color: var(--tinta);
+    font-size: .78em;
+    font-weight: 700;
+}
+
+.contenido-imagen {
+    position: relative;
+    justify-items: center;
+    flex: none;
+    height: 10rem;
+    overflow: hidden;
+}
+
+.contenido-imagen img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.imagen-pendiente { width: 2rem; height: 2rem; color: var(--tinta); }
+
+.acciones {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .55rem .8rem;
+    margin-top: auto;
+}
+
+button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    min-height: 2.75rem;
+    padding: .5rem .8rem;
+    border: 1px solid transparent;
+    border-radius: .6rem;
+    background: #28243a;
+    color: #fff;
+    font: inherit;
+    font-size: .86rem;
+    font-weight: 650;
+    cursor: pointer;
+}
+
+button:hover:not(:disabled) { background: var(--tinta); }
+button:focus-visible { outline: 3px solid var(--tinta); outline-offset: 3px; }
+button:disabled { background: #e9e6ee; color: #4e495d; cursor: wait; }
+
+.estado { color: #54566a; font-size: .8rem; line-height: 1.4; }
+.estado[data-estado="error"], .aviso { color: #8b262e; }
+.estado[data-estado="error"] { flex-basis: 100%; }
+.aviso { margin-bottom: 1rem; }
+
+.estado[data-estado="listo"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+@media (max-width: 42rem) {
+    .contenedor { width: min(32rem, 100% - 1.5rem); padding: 1.5rem 0; }
+    .tarjetas { grid-template-columns: minmax(0, 1fr); }
+    .contenido-imagen { height: 12rem; }
+}

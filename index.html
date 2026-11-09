@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Descubre citas, fotos de perros y gatos, y datos curiosos en un solo lugar.">
+    <title>Explorador de contenido aleatorio</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="explorador.js" defer></script>
+</head>
+<body>
+    <svg class="iconos" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <symbol id="icono-brillo" viewBox="0 0 24 24">
+            <path d="M12 2c0 6-4 10-10 10 6 0 10 4 10 10 0-6 4-10 10-10-6 0-10-4-10-10Z"/>
+        </symbol>
+        <symbol id="icono-cita" viewBox="0 0 24 24">
+            <path d="M10 11H4a6 6 0 0 1 6-6M4 11v7h6v-7m10 0h-6a6 6 0 0 1 6-6m-6 6v7h6v-7"/>
+        </symbol>
+        <symbol id="icono-perro" viewBox="0 0 24 24">
+            <ellipse cx="5" cy="10" rx="2" ry="2.5" transform="rotate(-20 5 10)"/>
+            <ellipse cx="10" cy="6" rx="2" ry="2.5"/>
+            <ellipse cx="15" cy="6" rx="2" ry="2.5"/>
+            <ellipse cx="19.5" cy="10" rx="2" ry="2.5" transform="rotate(20 19.5 10)"/>
+            <path d="M12 12c-2 0-3 2-5 4-2 2 0 5 3 4l2-.7 2 .7c3 1 5-2 3-4-2-2-3-4-5-4Z"/>
+        </symbol>
+        <symbol id="icono-gato" viewBox="0 0 24 24">
+            <path d="M4 12V4l5 4h6l5-4v8a8 8 0 0 1-16 0Zm4 0h.01M16 12h.01M11 15l1 1 1-1M2 15l4 1m16-1-4 1"/>
+        </symbol>
+        <symbol id="icono-dato" viewBox="0 0 24 24">
+            <path d="M9 18h6m-5 3h4m-5-6c0-2-3-3-3-6a6 6 0 0 1 12 0c0 3-3 4-3 6Z"/>
+        </symbol>
+        <symbol id="icono-actualizar" viewBox="0 0 24 24">
+            <path d="M20 10a8 8 0 0 0-14-3L4 9m0-5v5h5m-5 5a8 8 0 0 0 14 3l2-2m0 5v-5h-5"/>
+        </symbol>
+    </svg>
+
+    <main class="contenedor">
+        <header class="encabezado">
+            <p class="etiqueta"><svg class="icono" aria-hidden="true"><use href="#icono-brillo"/></svg> Programación Web III</p>
+            <h1>Explorador de <span>contenido aleatorio</span></h1>
+            <p class="introduccion">Cuatro formas de descubrir algo al azar. Usa el botón de cada tarjeta para renovar su contenido.</p>
+        </header>
+
+        <noscript><p class="aviso">Activa JavaScript para consultar las cuatro APIs.</p></noscript>
+
+        <div class="tarjetas">
+            <section class="tarjeta citas" id="citas" aria-labelledby="titulo-citas">
+                <header class="cabecera-tarjeta">
+                    <span class="insignia"><svg class="icono" aria-hidden="true"><use href="#icono-cita"/></svg></span>
+                    <div><h2 id="titulo-citas">Citas y autores</h2><p>DummyJSON</p></div>
+                    <span class="numero" aria-hidden="true">01</span>
+                </header>
+                <div class="contenido contenido-texto" data-contenido>
+                    <figure lang="en">
+                        <blockquote data-cita></blockquote>
+                        <figcaption data-autor></figcaption>
+                    </figure>
+                </div>
+                <div class="acciones">
+                    <button type="button"><svg class="icono" aria-hidden="true"><use href="#icono-actualizar"/></svg>Obtener otra cita</button>
+                    <p class="estado" role="status"></p>
+                </div>
+            </section>
+
+            <section class="tarjeta perros" id="perros" aria-labelledby="titulo-perros">
+                <header class="cabecera-tarjeta">
+                    <span class="insignia"><svg class="icono" aria-hidden="true"><use href="#icono-perro"/></svg></span>
+                    <div><h2 id="titulo-perros">Perros</h2><p>Dog CEO</p></div>
+                    <span class="numero" aria-hidden="true">02</span>
+                </header>
+                <div class="contenido contenido-imagen" data-contenido>
+                    <svg class="icono imagen-pendiente" aria-hidden="true"><use href="#icono-perro"/></svg>
+                </div>
+                <div class="acciones">
+                    <button type="button"><svg class="icono" aria-hidden="true"><use href="#icono-actualizar"/></svg>Mostrar otro perro</button>
+                    <p class="estado" role="status"></p>
+                </div>
+            </section>
+
+            <section class="tarjeta gatos" id="gatos" aria-labelledby="titulo-gatos">
+                <header class="cabecera-tarjeta">
+                    <span class="insignia"><svg class="icono" aria-hidden="true"><use href="#icono-gato"/></svg></span>
+                    <div><h2 id="titulo-gatos">Gatos</h2><p>CATAAS</p></div>
+                    <span class="numero" aria-hidden="true">03</span>
+                </header>
+                <div class="contenido contenido-imagen" data-contenido>
+                    <svg class="icono imagen-pendiente" aria-hidden="true"><use href="#icono-gato"/></svg>
+                </div>
+                <div class="acciones">
+                    <button type="button"><svg class="icono" aria-hidden="true"><use href="#icono-actualizar"/></svg>Mostrar otro gato</button>
+                    <p class="estado" role="status"></p>
+                </div>
+            </section>
+
+            <section class="tarjeta datos" id="datos" aria-labelledby="titulo-datos">
+                <header class="cabecera-tarjeta">
+                    <span class="insignia"><svg class="icono" aria-hidden="true"><use href="#icono-dato"/></svg></span>
+                    <div><h2 id="titulo-datos">Datos curiosos</h2><p>Useless Facts</p></div>
+                    <span class="numero" aria-hidden="true">04</span>
+                </header>
+                <div class="contenido contenido-texto" data-contenido>
+                    <p data-dato lang="en"></p>
+                </div>
+                <div class="acciones">
+                    <button type="button"><svg class="icono" aria-hidden="true"><use href="#icono-actualizar"/></svg>Mostrar otro dato</button>
+                    <p class="estado" role="status"></p>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
